@@ -1,6 +1,9 @@
-# [beanshell-examples](https://github.com/chabala/beanshell-examples)
+# [beanshell-examples](https://chabala.github.io/beanshell-examples/)
 
 BeanShell example code, in the context of enhancing a Maven build.
+
+<div style="text-align: right">
+[GitHub repository for this page](https://github.com/chabala/beanshell-examples/)</div>
 
 ## What is BeanShell?
 
@@ -75,7 +78,8 @@ you were stuck in a pre-Java-8 environment.
 
 First let's look at the examples from the plugin documentation.
 
-From https://genthaler.github.io/beanshell-maven-plugin/usage.html :
+From: [https://genthaler.github.io/beanshell-maven-plugin/usage.html](
+https://genthaler.github.io/beanshell-maven-plugin/usage.html)
 
 ```xml
 <plugin>
@@ -152,7 +156,8 @@ BeanShell, GitHub. I searched specifically for pom.xml files that contained 'bea
 
 ### JaCoCo
 
-From: https://github.com/jacoco/jacoco/blob/25594b2c01d5b76a4f76cf2de967aa70258c84c0/org.jacoco.build/pom.xml#L671-L717
+From: [https://github.com/jacoco/jacoco/blob/25594b2c01d5b76a4f76cf2de967aa70258c84c0/org.jacoco.build/pom.xml#L671-L717](
+https://github.com/jacoco/jacoco/blob/25594b2c01d5b76a4f76cf2de967aa70258c84c0/org.jacoco.build/pom.xml#L671-L717)
 
 ```xml
 <plugin>
@@ -217,7 +222,8 @@ could handle, and presumably using them later on in the build.
 
 ### MariaDB4j
 
-From: https://github.com/MariaDB4j/MariaDB4j/blob/a77298386c309276674f207f9dced010c73eb35c/mariaDB4j-pom-lite/pom.xml#L97-L153
+From: [https://github.com/MariaDB4j/MariaDB4j/blob/a77298386c309276674f207f9dced010c73eb35c/mariaDB4j-pom-lite/pom.xml#L97-L153](
+https://github.com/MariaDB4j/MariaDB4j/blob/a77298386c309276674f207f9dced010c73eb35c/mariaDB4j-pom-lite/pom.xml#L97-L153)
 
 ```xml
 <plugin>
@@ -301,7 +307,8 @@ copies of them simply due to forks of the containing projects and slight variati
 
 The next two examples are my own work, and you are free to use them as you see fit.
 
-From: https://github.com/chabala/brick-control-lab/pull/26/commits/a3d940914e08e1056ca07eee463406ec07683376
+From: [https://github.com/chabala/brick-control-lab/pull/26/commits/a3d940914e08e1056ca07eee463406ec07683376](
+https://github.com/chabala/brick-control-lab/pull/26/commits/a3d940914e08e1056ca07eee463406ec07683376)
 
 ```xml
 <plugin>
@@ -317,36 +324,36 @@ From: https://github.com/chabala/brick-control-lab/pull/26/commits/a3d940914e08e
             <configuration>
                 <quiet>true</quiet>
                 <script><![CDATA[
-                // Generate redirect pages for historic site URLs (MPIR-323)
-                String contents(String target) {
-                    String url = project.url + target;
-                    String template = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" " +
-                            "\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
-                            "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n" +
-                            "<head>\n" +
-                            "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n" +
-                            "    <link rel=\"canonical\" href=\"" + url + "\" />\n" +
-                            "    <meta http-equiv=\"refresh\" content=\"0;url=" + target + "\" />\n" +
-                            "</head>\n<body>\n<h1>\n" +
-                            "    This page has been moved to <a href=\"" + target + "\">" + url + "</a>\n" +
-                            "    <script type='text/javascript'> window.location.replace(\"" + url + "\"); </script>\n" +
-                            "</h1>\n</body>\n</html>\n";
-                    return template;
-                }
-                File site = new File(project.reporting.outputDirectory);
-                site.mkdirs();
-                String[][] filenameArray = new String[][] {
-                        {"integration.html", "ci-management.html"},
-                        {"issue-tracking.html", "issue-management.html"},
-                        {"license.html", "licenses.html"},
-                        {"project-summary.html", "summary.html"},
-                        {"source-repository.html", "scm.html"},
-                        {"team-list.html", "team.html"}};
-                for (int i=0; i<filenameArray.length; i++) {
-                    File file = new File(site, filenameArray[i][0]);
-                    org.codehaus.plexus.util.FileUtils.fileWrite(file, "UTF-8", contents(filenameArray[i][1]));
-                }
-                ]]>
+        // Generate redirect pages for historic site URLs (MPIR-323)
+        String contents(String target) {
+            String url = project.url + target;
+            String template = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" " +
+                    "\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
+                    "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n" +
+                    "<head>\n" +
+                    "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n" +
+                    "    <link rel=\"canonical\" href=\"" + url + "\" />\n" +
+                    "    <meta http-equiv=\"refresh\" content=\"0;url=" + target + "\" />\n" +
+                    "</head>\n<body>\n<h1>\n" +
+                    "    This page has been moved to <a href=\"" + target + "\">" + url + "</a>\n" +
+                    "    <script type='text/javascript'> window.location.replace(\"" + url + "\"); </script>\n" +
+                    "</h1>\n</body>\n</html>\n";
+            return template;
+        }
+        File site = new File(project.reporting.outputDirectory);
+        site.mkdirs();
+        String[][] filenameArray = new String[][] {
+                {"integration.html", "ci-management.html"},
+                {"issue-tracking.html", "issue-management.html"},
+                {"license.html", "licenses.html"},
+                {"project-summary.html", "summary.html"},
+                {"source-repository.html", "scm.html"},
+                {"team-list.html", "team.html"}};
+        for (int i=0; i<filenameArray.length; i++) {
+            File file = new File(site, filenameArray[i][0]);
+            org.codehaus.plexus.util.FileUtils.fileWrite(file, "UTF-8", contents(filenameArray[i][1]));
+        }
+        ]]>
                 </script>
             </configuration>
         </execution>
@@ -375,7 +382,8 @@ with the Plexus `FileUtils` we saw used earlier.
 This feels like it hits the sweet spot of being too niche to warrant having its own plugin, and yet too complex to try
 to cobble together from Ant primitives in `maven-antrun-plugin`. The last example is a different story.
 
-From: https://github.com/chabala/brick-control-lab/pull/26/commits/94072024c98e1b591efc789699c3180cbe45f389
+From: [https://github.com/chabala/brick-control-lab/pull/26/commits/94072024c98e1b591efc789699c3180cbe45f389](
+https://github.com/chabala/brick-control-lab/pull/26/commits/94072024c98e1b591efc789699c3180cbe45f389)
 
 ```xml
 <plugin>
