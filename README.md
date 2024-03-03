@@ -3,7 +3,9 @@
 BeanShell example code, in the context of enhancing a Maven build.
 
 <div style="text-align: right">
-<a href="https://github.com/chabala/beanshell-examples/">GitHub repository for this page</a></div>
+<a href="https://github.com/chabala/beanshell-examples/">GitHub repository for this page</a> / 
+<a href="https://chabala.github.io/">Up to the root page</a>
+</div>
 
 ## What is BeanShell?
 
