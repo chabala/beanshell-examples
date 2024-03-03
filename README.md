@@ -3,7 +3,7 @@
 BeanShell example code, in the context of enhancing a Maven build.
 
 <div style="text-align: right">
-[GitHub repository for this page](https://github.com/chabala/beanshell-examples/)</div>
+<a href="https://github.com/chabala/beanshell-examples/">GitHub repository for this page</a></div>
 
 ## What is BeanShell?
 
@@ -562,4 +562,4 @@ and then re-paste it into the BeanShell interpreter test. A good IDE like Intell
 clipboard full of Java code into a properly escaped string version without a lot of tedium. Likewise with copying
 the code into a CDATA block in the pom.xml.
 
-Copyright © 2024 Greg Chabala
+Copyright © 2024 [Greg Chabala](https://github.com/chabala)
