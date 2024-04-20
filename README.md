@@ -498,7 +498,7 @@ a lot of changes that looked like they might break pages.
 So I use jsoup just for the parsing, and handle inserting missing canonical URL link tags myself. This taught me
 there's no easy way to insert text in the middle of a file; one either builds a copy of the file with the text
 inserted and then replaces the original with the copy, or move some of the original file into a temp file while
-the new text is added, and then re-append the from the temp file back into the original file, which is the path
+the new text is added, and then re-append the text from the temp file back into the original file, which is the path
 I took.
 
 This script ends up being too big in my opinion, and if I want to do this in other projects, I don't want
